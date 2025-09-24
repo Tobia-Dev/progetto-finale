@@ -1,0 +1,154 @@
+@import "tailwindcss";
+/* 
+
+.notizia {
+  border-radius: 15px;
+  flex: 1 1 100%;
+  padding: 15px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-image: url(https://media.gettyimages.com/id/1434149985/it/foto/concetto-criptovaluta-sulle-banconote.jpg?s=612x612&w=0&k=20&c=JtEp7r4QbpaaUH_2cLC00H_bDpw4ELYaGykUGIlXQCo=);
+  background-size: cover;
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+
+.titolo {
+  background-color: rgba(0,0,0,0.6);
+  ;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .notizia {
+    flex: 1 1 calc(50% - 16px); 
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .notizia {
+    flex: 1 1 calc(25% - 16px);
+  }
+} 
+
+*/
+
+.single-line {
+  height: 1px;
+  background-color: rgb(99, 99, 99);
+}
+
+
+
+.news-scroll {
+  display: flex;
+
+  gap: 16px;
+  overflow-x: auto;
+  /* scroll orizzontale */
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+  /* scorrimento fluido */
+}
+
+.news-scroll::-webkit-scrollbar {
+  height: 8px;
+  /* altezza dello scrollbar */
+}
+
+.news-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.news-scroll a {
+  width:300px; 
+  height: 200px;
+
+}
+
+.notizia {
+  height: 100%;
+  /* larghezza fissa per ogni card */
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.titolo {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.cryptoContainer {
+  overflow-x: auto;
+}
+
+.cryptoContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cryptoContainer th,
+.cryptoContainer td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.cryptoContainer th:first-child,
+.cryptoContainer td:first-child {
+  text-align: left;
+}
+
+.cryptoContainer thead {
+  background: #111827; 
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .cryptoContainer th:nth-child(3),
+  .cryptoContainer td:nth-child(3),
+  .cryptoContainer th:nth-child(4),
+  .cryptoContainer td:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 340px) {
+  .cryptoContainer th:nth-child(2),
+  .cryptoContainer td:nth-child(2) {
+    display: none;
+  }
+}
+
+/* @media (min-width: 340px) {
+  .notizia {
+    flex: 1 1 calc(50% - 16px);
+  }
+} */
+
+/* @media (min-width: 1024px) {
+  .notizia {
+    flex: 1 1 calc(25% - 16px);
+  }
+} */
