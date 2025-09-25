@@ -54,15 +54,12 @@
 
   gap: 16px;
   overflow-x: auto;
-  /* scroll orizzontale */
   padding-bottom: 8px;
   scroll-behavior: smooth;
-  /* scorrimento fluido */
 }
 
 .news-scroll::-webkit-scrollbar {
   height: 8px;
-  /* altezza dello scrollbar */
 }
 
 .news-scroll::-webkit-scrollbar-thumb {
@@ -77,8 +74,8 @@
 }
 
 .notizia {
-  height: 100%;
-  /* larghezza fissa per ogni card */
+  height: 200px;
+  width:300px;
   border-radius: 15px;
   padding: 15px;
   display: flex;
@@ -126,21 +123,7 @@
 }
 
 
-@media (max-width: 768px) {
-  .cryptoContainer th:nth-child(3),
-  .cryptoContainer td:nth-child(3),
-  .cryptoContainer th:nth-child(4),
-  .cryptoContainer td:nth-child(4) {
-    display: none;
-  }
-}
 
-@media (max-width: 340px) {
-  .cryptoContainer th:nth-child(2),
-  .cryptoContainer td:nth-child(2) {
-    display: none;
-  }
-}
 
 /* @media (min-width: 340px) {
   .notizia {

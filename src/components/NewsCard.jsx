@@ -1,6 +1,6 @@
-import React from "react";
 
-function NewsCard({ url, title }) {
+
+function NewsCard({ url, title,image }) {
   const imageBase =
     "https://media.gettyimages.com/id/1434149985/it/foto/concetto-criptovaluta-sulle-banconote.jpg?s=612x612&w=0&k=20&c=JtEp7r4QbpaaUH_2cLC00H_bDpw4ELYaGykUGIlXQCo=";
 
@@ -13,7 +13,7 @@ function NewsCard({ url, title }) {
       <div
         className="notizia"
         style={{
-          backgroundImage: `url(${url || imageBase})`,
+          backgroundImage: `url(${image || imageBase})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

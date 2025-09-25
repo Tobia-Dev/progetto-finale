@@ -33,12 +33,12 @@ function App() {
     const fetchAllData = async () => {
       try {
         // Fetch 1: Cani
-        const dogsResponse = await fetch("https://dog.ceo/api/breeds/image/random/6");
-        const dogsData = await dogsResponse.json();
-        setNews(dogsData.message);
+        const newsResponse = await fetch("https://newsdata.io/api/1/news?apikey=pub_1b2fef66d42a4dbcbf2f8e6911ef66df&q=crypto&language=en");
+        const newsData = await newsResponse.json();
+        setNews(newsData.results.slice(0, 6));
 
         // Fetch 2: Crypto  
-        const cryptoResponse = await fetch("/api/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false&price_change_percentage=1h,24h,7d");
+        const cryptoResponse = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false&price_change_percentage=1h,24h,7d");
         const cryptoData = await cryptoResponse.json();
 
         setCryptoData(cryptoData);
@@ -62,27 +62,30 @@ function App() {
           path="/"
           element={
             <>
-            <div className="min-h-screen">
-              <div className="p-5">
-                <h1 className="text-2xl font-semibold">
-                  Utime Notizie
-                </h1>
-                <p className="single-line mt-2"></p>
-                <div className="news-scroll mt-5">
-                  {news.map((item, index) => (
-                    <NewsCard key={index} url={item} title={item}></NewsCard>
-                  ))}
+              <div className="min-h-screen">
+                <div className="p-5">
+                  <h1 className="text-2xl font-semibold">
+                    Utime Notizie
+                  </h1>
+                  <p className="single-line mt-2"></p>
+                  <div className="news-scroll mt-5 w-11/12 mx-auto">
+                    {news.map((item, index) => (
+                      <NewsCard key={index} 
+                        url={item.link}
+                        title={item.title}
+                        image={item.image_url} ></NewsCard>
+                    ))}
+                  </div>
                 </div>
+                <CryptoSearch onSearch={handleSearch} />
+                <CryptoTable data={displayedData}></CryptoTable>
               </div>
-              <CryptoSearch onSearch={handleSearch} />
-              <CryptoTable data={displayedData}></CryptoTable>
-            </div>
             </>
           }
         />
         <Route path="/crypto/:id" element={<CryptoDetails />} />
       </Routes>
-          <Footer></Footer>
+      <Footer></Footer>
     </>
   );
 }

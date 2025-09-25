@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 
 function formatLargeNumber(num) {
@@ -44,7 +44,7 @@ const CryptoTable = ({ data }) => {
                                         className="as"
                                     />
                                     <span className="font-bold">{crypto.name}</span>
-                                    <span className="font-light text-gray-700">{crypto.symbol}</span>
+                                    <span className="font-light text-gray-700 hidden md:table-cell">{crypto.symbol}</span>
                                 </Link>
                             </td>
                             <td className="p-3 text-right">

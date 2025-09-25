@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 function CryptoSearch({ onSearch }) {
   const [query, setQuery] = useState("");
@@ -10,14 +10,15 @@ function CryptoSearch({ onSearch }) {
   };
 
   useEffect(() => {
-  if (query === "") {
-    onSearch(""); // forza reset quando il campo diventa vuoto
-  }
-}, [query, onSearch]);
+    if (query === "") {
+      onSearch(""); // forza reset quando il campo diventa vuoto
+    }
+  }, [query, onSearch]);
 
   return (
-    <div className="flex items-center gap-2 mb-4  w-11/12 mx-auto">
+    <div className="flex items-center gap-2 mb-4 mt-10 w-11/12 mx-auto">
       <input
+        id="search"
         type="text"
         placeholder="Cerca crypto..."
         value={query}
