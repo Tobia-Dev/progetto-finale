@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 function CryptoSearch({ onSearch }) {
   const [query, setQuery] = useState("");
@@ -8,6 +8,12 @@ function CryptoSearch({ onSearch }) {
     setQuery(value);
     onSearch(value.trim()); // aggiorna tabella in tempo reale
   };
+
+  useEffect(() => {
+  if (query === "") {
+    onSearch(""); // forza reset quando il campo diventa vuoto
+  }
+}, [query, onSearch]);
 
   return (
     <div className="flex items-center gap-2 mb-4  w-11/12 mx-auto">
